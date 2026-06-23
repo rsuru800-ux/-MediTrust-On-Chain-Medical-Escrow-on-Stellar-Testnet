@@ -1,0 +1,284 @@
+/* MedEscrow ActivityTimeline styling */
+
+.container {
+  background-color: var(--surface-container-lowest);
+  border: var(--border-card);
+  border-radius: var(--radius-card);
+  padding: var(--space-24);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.container:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-1px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-16);
+}
+
+.title {
+  font-family: 'Public Sans', sans-serif;
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.statusGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.statusLive {
+  background-color: var(--status-success-bg);
+  color: var(--status-success-color);
+  border: 1px solid rgba(4, 120, 87, 0.2);
+}
+
+.statusLive .pulseDot {
+  background-color: var(--status-success-color);
+  animation: pulse 1.5s infinite;
+}
+
+.statusReconnecting {
+  background-color: var(--status-pending-bg);
+  color: var(--status-pending-color);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.statusReconnecting .pulseDot {
+  background-color: var(--status-pending-color);
+  animation: pulse 1.5s infinite;
+}
+
+.statusDisconnected {
+  background-color: var(--status-error-bg);
+  color: var(--status-error-color);
+  border: 1px solid rgba(186, 26, 26, 0.2);
+}
+
+.statusDisconnected .pulseDot {
+  background-color: var(--status-error-color);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(4, 120, 87, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 5px rgba(4, 120, 87, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(4, 120, 87, 0);
+  }
+}
+
+.refreshButton {
+  background: none;
+  border: none;
+  color: var(--on-surface-variant);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  transition: all 0.2s ease;
+}
+
+.refreshButton:hover {
+  color: var(--primary);
+  background-color: var(--surface-container-low);
+}
+
+.errorMessage {
+  background-color: var(--status-error-bg);
+  border: 1px solid rgba(186, 26, 26, 0.2);
+  border-radius: var(--radius-button);
+  padding: var(--space-12);
+  color: var(--status-error-color);
+  font-size: 13px;
+  margin-bottom: var(--space-16);
+  line-height: 1.5;
+}
+
+.timelineList {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: var(--space-8);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-40) var(--space-16);
+}
+
+.emptyText {
+  color: var(--on-surface-variant);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+
+.emptySubText {
+  color: var(--outline);
+  font-size: 12px;
+  margin-top: 0;
+}
+
+.timelineItem {
+  display: flex;
+  gap: var(--space-16);
+}
+
+.iconCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eventIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  z-index: 1;
+  box-shadow: var(--shadow-card);
+}
+
+.created {
+  border-color: var(--secondary);
+  background-color: var(--status-verified-bg);
+  color: var(--status-verified-color);
+}
+
+.deposited {
+  border-color: var(--status-success-color);
+  background-color: var(--status-success-bg);
+  color: var(--status-success-color);
+}
+
+.released {
+  border-color: var(--status-success-color);
+  background-color: var(--status-success-bg);
+  color: var(--status-success-color);
+}
+
+.disputed {
+  border-color: var(--status-error-color);
+  background-color: var(--status-error-bg);
+  color: var(--status-error-color);
+}
+
+.resolved {
+  border-color: var(--status-success-color);
+  background-color: var(--status-success-bg);
+  color: var(--status-success-color);
+}
+
+.refunded {
+  border-color: var(--status-pending-color);
+  background-color: var(--status-pending-bg);
+  color: var(--status-pending-color);
+}
+
+.connectorLine {
+  width: 2px;
+  flex-grow: 1;
+  background-color: var(--outline-variant);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-8);
+  min-height: 32px;
+}
+
+.timelineItem:last-child .connectorLine {
+  display: none;
+}
+
+.contentCol {
+  flex-grow: 1;
+  padding-bottom: var(--space-24);
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-4);
+}
+
+.eventType {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--on-surface-variant);
+}
+
+.timestamp {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--outline);
+}
+
+.message {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--on-surface);
+  line-height: 1.5;
+  margin: 0 0 var(--space-8) 0;
+}
+
+.metaRow {
+  display: flex;
+  gap: var(--space-16);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--outline);
+}
+
+.ledger {
+  background-color: var(--surface-container-low);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.eventId {
+  font-family: monospace;
+}

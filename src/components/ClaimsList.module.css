@@ -1,0 +1,196 @@
+/* MedEscrow ClaimsList styling */
+.container { display: flex; flex-direction: column; gap: var(--space-24); }
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+}
+
+.filterRow {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  background: none;
+  border: 1px solid var(--outline-variant);
+  color: var(--on-surface-variant);
+  padding: 0 14px;
+  height: 36px;
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filterBtn:hover { border-color: var(--secondary); color: var(--secondary); }
+.filterBtnActive {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
+  font-weight: 600;
+}
+
+.refreshBtn {
+  background: none;
+  border: 1px solid var(--outline-variant);
+  color: var(--on-surface-variant);
+  padding: 0 var(--space-12);
+  height: 36px;
+  border-radius: var(--radius-button);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  transition: all 0.2s ease;
+}
+.refreshBtn:hover:not(:disabled) { border-color: var(--secondary); color: var(--secondary); }
+.refreshBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.section {
+  background-color: var(--surface-container-lowest);
+  border: var(--border-card);
+  border-radius: var(--radius-card);
+  padding: var(--space-24);
+  box-shadow: var(--shadow-card);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-16);
+}
+
+.sectionTitle {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+}
+
+.errorMsg {
+  background-color: var(--status-error-bg);
+  border: 1px solid rgba(186,26,26,0.2);
+  border-radius: var(--radius-button);
+  padding: var(--space-16);
+  color: var(--status-error-color);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.emptyState { text-align: center; padding: var(--space-40) var(--space-16); }
+.emptyIcon { font-size: 48px; margin-bottom: var(--space-16); }
+.emptyTitle { font-family: 'Public Sans', sans-serif; font-size: 18px; font-weight: 600; color: var(--primary); margin: 0 0 var(--space-8) 0; }
+.emptyText { font-size: 14px; color: var(--on-surface-variant); margin: 0; line-height: 1.5; }
+
+.table { width: 100%; border-collapse: collapse; }
+.table thead { background-color: var(--surface-container-low); }
+.table th {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--outline-variant);
+  white-space: nowrap;
+}
+.table tbody tr {
+  border-bottom: 1px solid var(--outline-variant);
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+.table tbody tr:hover { background-color: var(--surface-container-low); }
+.table tbody tr:nth-child(even) { background-color: var(--surface-container-low); }
+.table tbody tr:nth-child(even):hover { background-color: var(--surface-container); }
+.table tbody tr:last-child { border-bottom: none; }
+.table td { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--on-surface); padding: 13px 16px; vertical-align: middle; }
+
+.monoLink {
+  font-family: monospace;
+  font-size: 12px;
+  background-color: var(--surface-container-low);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--secondary);
+  text-decoration: none;
+}
+.monoLink:hover { color: var(--primary); }
+
+.monoText {
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--on-surface-variant);
+}
+
+.badge { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+.badgePending { background-color: var(--status-pending-bg); color: var(--status-pending-color); }
+.badgeFunded { background-color: var(--status-verified-bg); color: var(--status-verified-color); }
+.badgeReleased { background-color: var(--status-success-bg); color: var(--status-success-color); }
+.badgeRefunded { background-color: var(--surface-container-high); color: var(--on-surface-variant); }
+.badgeDisputed { background-color: var(--status-error-bg); color: var(--status-error-color); }
+
+.myRoleBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.amountCell { font-family: 'Public Sans', sans-serif; font-weight: 700; color: var(--primary); }
+
+.openBtn {
+  background: none;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  padding: 0 12px;
+  height: 30px;
+  border-radius: var(--radius-button);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.openBtn:hover { background-color: var(--secondary); color: var(--on-secondary); }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-16);
+  font-size: 13px;
+  color: var(--on-surface-variant);
+}
+.pageInfo { font-size: 13px; }
+.pageButtons { display: flex; gap: var(--space-8); }
+.pageBtn {
+  background: none;
+  border: 1px solid var(--outline-variant);
+  color: var(--on-surface-variant);
+  padding: 0 12px;
+  height: 32px;
+  border-radius: var(--radius-button);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.pageBtn:hover:not(:disabled) { border-color: var(--secondary); color: var(--secondary); }
+.pageBtn:disabled { opacity: 0.4; cursor: not-allowed; }

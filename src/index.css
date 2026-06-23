@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Public+Sans:wght@600;700&display=swap');
+
+:root {
+  /* Brand color variables */
+  --primary: #041627;
+  --on-primary: #ffffff;
+  --primary-container: #1a2b3c;
+  --secondary: #316289;
+  --on-secondary: #ffffff;
+  --secondary-container: #a5d4ff;
+  --on-secondary-container: #2a5c82;
+  --tertiary: #001818;
+  --tertiary-container: #002f2e;
+  --on-tertiary-container: #3c9f9c;
+  --error: #ba1a1a;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+  
+  --background: #f7fafc;
+  --surface: #f7fafc;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f1f4f6;
+  --surface-container: #ebeef0;
+  --surface-container-high: #e5e9eb;
+  --on-surface: #181c1e;
+  --on-surface-variant: #44474c;
+  --outline: #74777d;
+  --outline-variant: #c4c6cd;
+  
+  /* Status styles */
+  --status-pending-bg: rgba(217, 119, 6, 0.1);
+  --status-pending-color: #b45309;
+  
+  --status-success-bg: rgba(6, 95, 70, 0.1);
+  --status-success-color: #047857;
+  
+  --status-verified-bg: rgba(49, 98, 137, 0.1);
+  --status-verified-color: #316289;
+  
+  --status-error-bg: rgba(186, 26, 26, 0.1);
+  --status-error-color: #ba1a1a;
+  
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-40: 40px;
+  --space-64: 64px;
+  
+  /* Shapes & Shadows */
+  --radius-button: 8px;
+  --radius-input: 8px;
+  --radius-card: 12px;
+  --radius-modal: 12px;
+  --shadow-card: 0px 4px 12px rgba(26, 43, 60, 0.05);
+  --shadow-card-hover: 0px 8px 24px rgba(26, 43, 60, 0.08);
+  --border-card: 1px solid #E1E8ED;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--on-surface);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Public Sans', sans-serif;
+  color: var(--primary);
+  margin: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-container-low);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+select, button {
+  cursor: pointer;
+}

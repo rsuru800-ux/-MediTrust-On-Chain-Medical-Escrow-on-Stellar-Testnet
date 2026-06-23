@@ -1,0 +1,201 @@
+/* MedEscrow WalletSelectModal styling */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(4, 22, 39, 0.45);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-16);
+}
+
+.modal {
+  background: var(--surface-container-lowest);
+  border: var(--border-card);
+  box-shadow: 0px 12px 32px rgba(26, 43, 60, 0.15);
+  border-radius: var(--radius-modal);
+  max-width: 480px;
+  width: 100%;
+  padding: var(--space-24);
+  font-family: 'Inter', sans-serif;
+  color: var(--on-surface);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-8);
+}
+
+.title {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: var(--outline);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background-color: var(--surface-container-low);
+  color: var(--on-surface);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  margin-top: 0;
+  margin-bottom: var(--space-24);
+  line-height: 1.5;
+}
+
+.walletList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.walletItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-16);
+  border-radius: var(--radius-button);
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 72px; /* Comfortable touch target */
+}
+
+.walletItem:hover:not(.disabled) {
+  background: var(--surface-container-lowest);
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-1px);
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: var(--surface-container-low);
+  border-color: var(--outline-variant);
+}
+
+.walletInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.iconContainer {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.walletIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.fallbackIcon {
+  font-size: 20px;
+}
+
+.walletName {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--primary);
+  margin-bottom: 2px;
+}
+
+.walletDescription {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: var(--status-verified-bg);
+  color: var(--status-verified-color);
+  border: 1px solid rgba(49, 98, 137, 0.2);
+}
+
+.walletItem:hover:not(.disabled) .badge {
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+  border-color: transparent;
+}
+
+.downloadLink {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary);
+  text-decoration: none;
+  background: var(--status-verified-bg);
+  border: 1px solid var(--secondary);
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.downloadLink:hover {
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.footer {
+  margin-top: var(--space-24);
+  text-align: center;
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  border-top: 1px solid var(--outline-variant);
+  padding-top: var(--space-16);
+}

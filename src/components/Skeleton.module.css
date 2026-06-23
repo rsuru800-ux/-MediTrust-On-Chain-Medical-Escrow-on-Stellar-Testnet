@@ -1,0 +1,40 @@
+/* MedEscrow Skeleton styling */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-container) 25%,
+    var(--surface-container-high) 37%,
+    var(--surface-container) 63%
+  );
+  background-size: 400% 100%;
+  animation: pulse 1.4s ease infinite;
+}
+
+.skeletonCard {
+  background-color: var(--surface-container-lowest);
+  border: var(--border-card);
+  border-radius: var(--radius-card);
+  padding: var(--space-24);
+  margin-bottom: var(--space-16);
+  box-shadow: var(--shadow-card);
+}
+
+.margin {
+  margin-bottom: var(--space-12);
+}
+
+.row {
+  display: flex;
+  gap: var(--space-16);
+  margin-top: var(--space-24);
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

@@ -1,0 +1,103 @@
+/* MedEscrow WalletButton styling */
+
+.button {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border: none;
+  padding: 0 20px;
+  border-radius: var(--radius-button);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease;
+  height: 48px; /* 48px touch target height */
+}
+
+.button:hover:not(.connecting) {
+  opacity: 0.9;
+}
+
+.connecting {
+  background-color: var(--surface-container);
+  color: var(--outline);
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(4, 22, 39, 0.2);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.connectedContainer {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--surface-container-lowest);
+  border: var(--border-card);
+  border-radius: var(--radius-button);
+  padding: 0 6px 0 16px;
+  gap: 16px;
+  height: 48px; /* Match touch target height */
+  box-shadow: var(--shadow-card);
+}
+
+.walletDetails {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  background-color: var(--status-success-color);
+  border-radius: 50%;
+}
+
+.publicKey {
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--secondary);
+}
+
+.walletName {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  text-transform: capitalize;
+}
+
+.disconnectButton {
+  background: none;
+  border: 1px solid var(--outline-variant);
+  color: var(--on-surface-variant);
+  padding: 0 12px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.disconnectButton:hover {
+  background-color: var(--error-container);
+  border-color: var(--error);
+  color: var(--error);
+}
