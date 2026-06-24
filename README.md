@@ -46,7 +46,9 @@ stateDiagram-v2
 
 > [!TIP]
 > **Live Web Link**: [http://localhost:5173/](http://localhost:5173/)
->**Vercel Deployment Link**: https://vercel.com/crusheerr/medi-trust-on-chain-medical-escrow-on-stellar-testnet 
+> 
+>**Vercel Deployment Link**: https://vercel.com/crusheerr/medi-trust-on-chain-medical-escrow-on-stellar-testnet
+> 
 > **Mobile Responsive Link**: [http://10.243.102.197:5173/](http://10.243.102.197:5173/) (Optimized and verified for mobile viewports down to 375px width)
 
 
